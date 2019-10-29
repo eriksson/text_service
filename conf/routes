@@ -2,11 +2,17 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
-GET         /                                controllers.ApplicationController.index(request: Request)
 
+# An example controller showing a sample home page
+GET         /                                controllers.ApplicationController.index(request: Request)
+GET         /leastfrequent                   controllers.ApplicationController.leastFrequent(request: Request)
 +nocsrf
 POST        /api/string/mostfrequent         controllers.API.getKMostFrequent(request: Request)
 
++nocsrf
+POST        /api/string/leastfrequent        controllers.API.getKLeastFrequent(request: Request)
+
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET         /assets/*file                    controllers.Assets.versioned(path="/public", file: Asset)
 GET         /javascriptRoutes                controllers.ApplicationController.javascriptRoutes(request: Request)
+

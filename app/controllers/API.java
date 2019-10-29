@@ -22,4 +22,14 @@ public class API extends Controller {
         response.put("word", words);
         return ok(Json.toJson(response));
     }
+
+    @BodyParser.Of(BodyParser.Json.class)
+    public Result getKLeastFrequent(Http.Request request) {
+        JsonNode json = request.body().asJson();
+        int topK = 10;
+        List<String> words = StringUtils.leastKFrequent(json.get("text").asText(null), topK);
+        Map<String, List<String>> response = new HashMap<>();
+        response.put("word", words);
+        return ok(Json.toJson(response));
+    }
 }

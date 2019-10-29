@@ -10,6 +10,10 @@ public class ApplicationController extends Controller {
         return ok(views.html.index.render(request));
     }
 
+    public Result leastFrequent(Http.Request request){
+        return ok(views.html.leastk.render(request));
+    }
+
     public Result javascriptRoutes(Http.Request request) {
         return ok(JavaScriptReverseRouter.create(
                         "jsRoutes",
