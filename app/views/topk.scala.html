@@ -1,0 +1,34 @@
+@()(implicit request: play.mvc.Http.Request)
+@js = {
+  <script type="text/javascript" src="@routes.Assets.versioned("javascripts/leastk.js")"></script>
+  <script type="text/javascript" src="@routes.ApplicationController.javascriptRoutes"></script>
+}
+@main("Welcome to Text Service", js) {
+  <section id="top">
+    <div class="wrapper">
+      <h1>Text Service</h1>
+    </div>
+  </section>
+
+  <div id="content" class="wrapper doc">
+    <article>
+      <h1>Find top K works in:</h1>
+      <textarea style="margin: 0px; width: 644px; height: 264px;" id="text">
+
+      </textarea>
+      <div id="result">
+
+      </div>
+    </article>
+
+    <aside>
+      <h3>Links</h3>
+      <ul>
+        <li><a href="#">Top K</a></li>
+        <li><a href="/leastfrequent">Least K</a></li>
+      </ul>
+
+    </aside>
+
+  </div>
+}
